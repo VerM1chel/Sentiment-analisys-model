@@ -17,7 +17,8 @@ def sentence_prediction(sentence):
             None,
             add_special_tokens=True,
             max_length=config.MAX_LENGTH,
-            truncation=True
+            truncation=True,
+            pad_to_max_length=True
     )
 
     ids = input_ids['input_ids']
