@@ -5,7 +5,6 @@ from tqdm import tqdm
 def loss_fn(outputs, targets):
     return torch.nn.BCEWithLogitsLoss()(outputs, targets.unsqueeze(1))
 
-
 def train_fn(data_loader, model, optimizer, device, scheduler):
     model.train()
     for batchIndex, data in tqdm(enumerate(data_loader), total=len(data_loader)):
@@ -23,7 +22,6 @@ def train_fn(data_loader, model, optimizer, device, scheduler):
         loss.backward()
         optimizer.step()
         scheduler.step()
-
 
 def eval_fn(dataloader, model, device):
     fin_outputs = []
