@@ -1,7 +1,6 @@
 import torch
 from tqdm import tqdm
 
-
 def loss_fn(outputs, targets):
     return torch.nn.BCEWithLogitsLoss()(outputs, targets.unsqueeze(1))
 
