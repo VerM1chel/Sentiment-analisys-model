@@ -1,12 +1,12 @@
-import config
 import transformers
 import torch.nn as nn
 
+import config
 
 class BertSentimentClassifier(nn.Module):
     def __init__(self):
         super().__init__()
-        self.bert = transformers.BertModel.from_pretrained(config.bert_path)
+        self.bert = transformers.BertModel.from_pretrained(config.BERT_PATH)
         self.dropout = nn.Dropout(0.3)
         self.linear = nn.Linear(768, 1)
 
