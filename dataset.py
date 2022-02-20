@@ -1,12 +1,13 @@
-import config
 import torch
+
+import config
 
 class BertDataset:
     def __init__(self, text, targets):
         self.text = text
         self.targets = targets
-        self.tokenizer = config.tokenizer
-        self.max_length = config.max_length
+        self.tokenizer = config.TOKENIZER
+        self.max_length = config.MAX_LENGTH
 
     def __len__(self):
         return len(self.text)
